@@ -1,1 +1,3 @@
 # Password-Generator
+A Simple Password Generator developed using Bootstrap & Javascript.
+Create robust and secure passwords effortlessly with our Password Generator powered by Bootstrap and Javascript. This user-friendly tool generates strong passwords tailored to your specifications, ensuring your online accounts remain protected. With Bootstrap's sleek and responsive design, the interface adapts seamlessly to any device, providing a smooth user experience across desktops, tablets, and smartphones. Utilizing Javascript, the generator offers real-time updates as you customize your password criteria, including length, character types, and special symbols. Say goodbye to weak passwords and enhance your online security with our Bootstrap-Powered Password Generator today.
