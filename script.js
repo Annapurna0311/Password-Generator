@@ -13,6 +13,7 @@ class Password {
     console.log("Welcome to Password Generator")
     this.pass = ""
   }
+  
   generatePassword(len) {
     let chars = "abcdefghijklmnopqrstuvwxyz"
     let numbers = "1234567890"
