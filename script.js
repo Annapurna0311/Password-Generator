@@ -1,40 +1,54 @@
-let len = document.getElementById("length")
-// let upper = document.getElementById("uppercase")
-// let lower = document.getElementById("lowercase")
-// let symbols = document.getElementById("symbols")
-// let numbers = document.getElementById("numbers")
-
-// generate.addEventListener('click', ()=>{
-//     getpass.value = p();
-// })
-
-class Password {
+class PasswordGenerator {
   constructor() {
-    console.log("Welcome to Password Generator")
-    this.pass = ""
+      this.uppercaseCheckbox = document.getElementById('uppercaseCheckbox');
+      this.lowercaseCheckbox = document.getElementById('lowercaseCheckbox');
+      this.numberCheckbox = document.getElementById('numberCheckbox');
+      this.specialCheckbox = document.getElementById('specialCheckbox');
+      this.passwordField = document.getElementById('passwordField');
+      this.generateBtn = document.getElementById('generateBtn');
+      this.copyBtn = document.getElementById('copyBtn');
+
+      this.generateBtn.addEventListener('click', this.generatePassword.bind(this));
+      this.copyBtn.addEventListener('click', this.copyPassword.bind(this));
   }
-  
-  generatePassword(len) {
-    let chars = "abcdefghijklmnopqrstuvwxyz"
-    let numbers = "1234567890"
-    let special = "!@#$%^&*()"
-    if (len < 3) {
-      console.log("Your password should be atleast 3 characters long")
-    }
-    else {
-      let i = 0
-      while (i < len) {
-        this.pass += chars[Math.floor(Math.random() * chars.length)]
-        this.pass += numbers[Math.floor(Math.random() * numbers.length)]
-        this.pass += special[Math.floor(Math.random() * special.length)]
-        i += 3
+
+  generatePassword() {
+      const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+      const numberChars = '0123456789';
+      const specialChars = '!@#$%^&*()-_=+';
+      let chars = '';
+      let newPassword = '';
+
+      if (this.uppercaseCheckbox.checked) {
+          chars += uppercaseChars;
       }
-      this.pass = this.pass.substr(0, len)
-      return this.pass
-    }
+      if (this.lowercaseCheckbox.checked) {
+          chars += lowercaseChars;
+      }
+      if (this.numberCheckbox.checked) {
+          chars += numberChars;
+      }
+      if (this.specialCheckbox.checked) {
+          chars += specialChars;
+      }
+
+      if (chars === '') {
+          alert('Please select at least one option.');
+          return;
+      }
+
+      for (let i = 0; i < 12; i++) {
+          newPassword += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      this.passwordField.value = newPassword;
+  }
+
+  copyPassword() {
+      this.passwordField.select();
+      document.execCommand('copy');
+      alert('Password copied to clipboard!');
   }
 }
 
-let p = new Password()
-document.write(len.value)
-p.generatePassword(len.value)
+const passwordGenerator = new PasswordGenerator();
