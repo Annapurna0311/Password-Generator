@@ -54,31 +54,25 @@
 
                 <h2 class="fw-bold mb-2 text-uppercase">Security At Peak</h2>
                 <p class="text-white-50 mb-5">Please mark your requirements!</p>
-
-                <div class="form-outline form-white mb-4" id="length">
-                  <input type="number" id="length" class="form-control form-control-lg" />
-                  <label class="form-label" for="typenumberX">Password Length </label>
-                </div>
+                <p class="text-white-30 mb-2">Let it be :-) </p>
                 <br>
-                <input type="checkbox" id="lowercase" name="lowercase">
-                <label for="lowercase"> Include lowercase (a-z)</label><br>
-                <input type="checkbox" id="uppercase" name="uppercase">
-                <label for="uppercase"> Include uppercase (A-Z)</label><br>
-                <input type="checkbox" id="symbols" name="symbols">
-                <label for="symbols"> Include symbols(e.g. !@#$%^&*())</label><br>
-                <input type="checkbox" id="numbers" name="numbers">
-                <label for="numbers"> Include numbers (0-9)</label><br>
-
-                </form>
-                <br>
-                <div class="generate" id="generate">
-                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Generate</button>
+                <div class="options">
+                    <input type="checkbox" id="uppercaseCheckbox" checked>
+                    <label for="uppercaseCheckbox">Include Uppercase(A-Z)</label></br>
+                    <input type="checkbox" id="lowercaseCheckbox" checked>
+                    <label for="lowercaseCheckbox">Include Lowercase(a-z)</label><br>
+                    <input type="checkbox" id="numberCheckbox" checked>
+                    <label for="numberCheckbox">Include Numbers (0-9)</label><br>
+                    <input type="checkbox" id="specialCheckbox" checked>
+                    <label for="specialCheckbox">Include Symbols(!@#$%^&*())</label><br>
                 </div>
-                <br>
-                <div class="form-outline form-white mb-4">
-                  <input type="text" id="getpass" class="form-control form-control-lg" />
-                  <label class="form-label" for="typeNameX">Your Password</label>
+                <div class="password">
+                    <input type="text" class="btn btn-outline-light btn-lg px-3"id="passwordField" readonly>
+                    <button id="generateBtn" class="btn btn-outline-light btn-lg px-5 m-3">Generate Password</button><br>
+                    <button id="copyBtn" class="btn btn-outline-light btn-lg px-5 ">Copy</button>
                 </div>
+                
+      
               </div>
             </div>
           </div>
